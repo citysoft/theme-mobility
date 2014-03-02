@@ -1,0 +1,996 @@
+/****
+CitySoft
+Mobility Theme
+Main site CSS
+Key Colors:
+white: #fefdfb
+black: #222222
+donate green: #09926C
+volunteer blue: #0d5e81
+become a member teal: #089298
+purple: #33042F
+gold: #F8E57C
+*****/
+
+
+/*** GLOBAL ****/
+
+.clear { clear: both; }
+.bold { font-weight: bold; }
+.error { color: red; }
+
+/**** MAIN *****/
+
+body {
+	background-color: #fefdfb;
+	color: #222222;
+	font: 10px/15px Arial, Helvetica, sans-serif;
+	background: url("../images/master_bg.png") repeat;
+	
+
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+	margin: 0;
+
+}
+
+body a { color: #0D5E81; text-decoration: none; }
+body a:hover, body a:active, body a:focus { color: #09926C; outline: 0; }
+
+#wrapper {
+	margin: 0px auto;
+	max-width: 1024px;
+}
+
+
+/***** HEADER SELECTORS *******/
+
+#header {
+	height:150px;
+	margin-top:-16px;
+	position:relative;
+}
+
+#header .brand a {
+	background:  url('../images/masthead_logo_bg.png') no-repeat scroll 0 0;
+display:block;
+	height:120px;
+	max-width: 100%;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#header p.tagline, #header .search {position:absolute;}
+#header p.tagline {
+	font-size:15px;
+	font-weight:bold;
+	font-style:italic;
+	left:290px;
+	top:85px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#header .brand a {
+		background: #fefdfb url('../images/logo_768_text.png') no-repeat scroll 0 0;
+		}
+	#header .search {
+		display: none;
+		}
+	#header p.tagline {
+		width:440px;
+		top:60px;
+		}
+}
+
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		#header .brand a {
+			background: #fefdfb url('../images/logo_420_text.png') no-repeat scroll 0 0;
+			}
+		#header p.tagline, #header .search {
+			display: none;
+			}
+	}
+
+	@media only screen and (max-width: 479px) {
+		#header .brand a {
+			background: #fefdfb url('../images/logo_300_text.png') no-repeat scroll 0 0;
+			}
+		#header p.tagline, #header .search {
+			display: none;
+			}		
+	}
+
+#header .search {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	width: 222222px;
+	height: 22px;
+    background: #444; 
+	right: 0;
+	top: 12px;
+}
+
+#header input { border: 0; float: left; }
+#header .appInputButton {
+    height: 22px; 
+    background: none; 
+    border-left: 1px solid rgba(255,255,255,.4);
+    color: #555; 
+	font-family: helvetica, verdana, arial, sans-serif;
+    font-size: .8em; 
+    line-height: 2;
+	margin: 0;
+    padding-top: 0;
+    text-transform: uppercase;
+}
+
+#header .appInputButton:hover { cursor: pointer; }
+#header .appInputText { 
+	width: 160px; 
+	height: 20px; 
+	background: none; 
+	border-right: 1px solid #aaa; 
+	font-size: .9em;
+	line-height: 1.1em;
+	margin-top: 0; 
+	padding-left: .24em;
+	text-indent: .2em; 	
+}
+
+
+/****** CONTENT STYLES ******/
+
+#content { 
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 1em;
+}
+
+.publicHeader, h2 { 
+	border-bottom: 1px solid lightGrey;
+	color: #473432;
+	font-size: 175%;
+	font-weight: 400;
+	line-height: 160%;
+	margin-bottom: .6em;
+	padding-bottom: .2em;	
+}
+
+
+h3, .appTitle1 { 
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+h3 a { color: #111; display: block; text-decoration: none; }
+h3 a:hover, h3 a:active, h3 a:focus { color: #b8b519; }
+
+
+#eventdetailtitle { padding: 1em 5px;}
+#eventdetailbody { font-size:125%; line-height: 1.4em;}
+
+.cssubheaderblue { color: #000033; font-size: 130%; }
+
+.smalltext { color: #8C8C8C; font-size: 85%; }
+.smalltext a { color: #226263; font-weight: 800; text-decoration: none; }
+
+blockquote {
+	background-color: #eee;
+	max-width: 500px;
+	font-size: 90%;
+	font-family: helvetica, verdana, arial, sans-serif;
+	padding: 5px 10px;
+}
+
+#primary-content img {
+	margin: 5px 20px 1em;
+	max-width: 100%;
+}
+
+#content p.caption {
+	font-size: 80%;
+	font-style: italic;
+	background-color: #eee;
+	border: 1px solid #e2e2e2;
+	max-width: 490px;
+	margin-top: -10px;
+	padding: 1px 5px;
+}
+
+#content p.indent {
+	margin-left:40px;
+}
+
+ul.page-menu.columns {
+	background-color: #eee;
+	border:2px solid #666;
+	font-family: helvetica, verdana, arial, sans-serif;
+	padding: 10px 0 10px 10px;
+	margin:1em 20px;
+	list-style: none;
+	float:right;
+}
+
+ul.page-menu.columns li.title {
+	font-weight: bold;
+	margin-bottom:5px;
+}
+
+ul.page-menu.columns a {
+	display:block;
+}
+
+table#membership-rates {
+	background-color: #eee;
+	border:2px solid #666;
+	font-family: helvetica, verdana, arial, sans-serif;
+	padding: 10px;
+	margin:1em 20px;
+}
+
+table#membership-rates td
+
+table#membership-rates td.dues {
+	padding-left:30px;
+}
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 20px; }
+	ul { list-style: disc outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	/* ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  } */
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 3px; }
+	/* li { line-height: 18px; margin-bottom: 12px; } */
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+
+/* #Images
+================================================== */
+
+	img.scale-with-grid {
+		max-width: 100%;
+		height: auto; }
+
+/****** DEFAULT TOP NAV ******/
+
+ #navwrapper {  width:100%; padding: 0; background-color:#b5c1f4; height:41px; } 
+
+#altnav {
+	display:none;
+}
+
+#nav {
+	
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+	padding: 0;
+	position: relative;
+	font-family: helvetica, verdana, arial, sans-serif;
+	font-weight: bold;
+
+}
+
+#nav li, div.loginnav {
+	height: 42px;
+	display: block;
+	font-size: 120%;
+	float: left;
+	line-height: 41px;
+	text-align: center;
+}
+
+#nav li a, div.loginnav a {
+	color: #444;
+	/*background-color: #000000;*/
+	background:url("../images/main_nav_bg.png") repeat-x;
+	display: block;
+	text-decoration:none;
+	width: 137px;
+	
+}
+
+#nav li a.About {
+	border-bottom: 0px solid #33042F;
+}
+
+#nav li a.Calendar {
+	border-bottom: 0px solid #0d5e81;
+}
+
+#nav li a.Programs {
+	border-bottom: 0px solid #089298;
+}
+
+#nav li a.InterfaithLife {
+	border-bottom: 0px solid #09926C;
+}
+
+#nav li a.Community {
+	border-bottom: 0px solid #33042F;
+}
+
+#nav li a.Donate {
+	border-bottom: 0px solid #0d5e81;
+}
+
+#nav li a.ContactUs {
+	border-bottom: 0px solid #089298;
+}
+
+div.loginnav a {
+	background-color: #e2e2e2;
+	color:#444;
+	border-bottom: 0px solid #09926C;
+}
+
+div.loginnav a:hover {
+	color:#e2e2e2;
+}
+
+#nav li a:hover, #primary-navigation li:hover > a  { 
+	background-position: -120px -32px; color:#FFF; 
+	background-color:#8894c7; }
+	
+#nav li:hover > ul { display: block; }	
+
+#nav li.first a:hover, #primary-navigation li.first:hover > a {
+	background-position: 0 -32px; color: #fefdfb; }
+#nav li.last a:hover, #primary-navigation li.last:hover > a {
+	background-position: -240px -32px; color: #fefdfb; }
+
+/* second level */
+
+#nav ul { 
+	-webkit-box-shadow: 0px 0px 10px #CCC;
+	box-shadow: 0px 0px 10px #CCC; 
+	width: 100%;
+	height: 160px;
+	background: #a79c9c url('../images/supernavbg.png') no-repeat;
+	display: none; 
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 41px;
+	z-index: 10;
+}
+
+#nav ul li:first-child { padding-top: 1em; }
+#nav ul li:first-child a { border-radius: 0; -moz-border-radius: 0; }
+#nav ul li:last-child a { border-radius: 0; -moz-border-radius: 0; }
+
+#nav ul li { 
+	width: 23%;
+	height: 20px;
+	display: block; 
+	float: none; 
+	font-size: 1em;
+	line-height: 1.4em;
+	margin-left: .5em;
+	text-align: left; 
+ }
+
+#nav ul li a { 
+	width: 100%; 
+	background: none; 
+	color: #fefdfb; 
+	display: block; 
+	padding: 1% 0 0 2%;
+}
+
+#nav ul li a:hover { 
+	background: url('../images/supernavlihover.png') no-repeat; 
+	color: #473432; 
+}
+
+ul#nav ul li:hover > a { 
+	background: url('../images/supernavlihover.png') no-repeat; 
+	color: #473432; 
+}
+
+/* third level */
+
+#nav ul ul { 
+	position: absolute;
+	 top: 15px; 
+	 left: 230px; 
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+	width: 48%; 
+	height: 10em;
+	background: none; 
+	display: none;
+}
+
+
+#nav ul ul li:first-child { padding: 0; }
+#nav ul ul li { width: 30%; float: left; font-size: .85em; padding: 0; }
+
+ul#nav ul ul li:hover > a { width: auto; height: auto; background: none; color: #fefdfb; }
+ul#nav ul ul li:hover > a:hover { color:#bdcaff; text-decoration:none; }
+
+
+
+/* Now let's make the nav responsive without access to the markup
+================================================== */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	ul#nav {
+		display:none;
+	}
+	ul#altnav {
+		display:block;
+		background:url("../images/main_nav_bg.png") repeat-x;
+	}	
+	#altnav li {
+		/*background-color: #e2e2e2;*/
+		margin:0 1px 0 0;
+		height: 32px;
+		line-height: 32px;
+		text-align: center;
+		padding: 3px 9px 2px;
+		
+		
+	}
+	
+	#altnav li.signinnav {
+		background-color: #0d5e81;
+		margin-left:9px;
+		margin-right:0px;
+	}
+	
+	#altnav li a {
+		font-family: helvetica, verdana, arial, sans-serif;
+		text-decoration: none;
+		color:#222222;
+		display:block;
+	}
+	
+	#altnav li a:hover {
+		color: #888;
+	}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	ul#nav {
+		display:none;
+	}
+	ul#altnav {
+		display:block;
+	}
+	#altnav li {
+	    background:url("../images/main_nav_bg.png") repeat-x;
+		/*background-color: #e2e2e2;*/
+		height: 32px;
+		margin:0 0 1px 0;
+		text-align: center;
+		padding: 3px 0 2px;
+		line-height: 30px;
+	}
+	
+	#altnav li.signinnav {
+		background-color: #0d5e81;
+	}
+	
+	#altnav li a {
+		font-family: helvetica, verdana, arial, sans-serif;
+		text-decoration: none;
+		color:#222222;
+		display:block;
+	}		
+	
+	#homenews blockquote {
+		display:none;
+	}
+	
+	#content img {
+		max-width:420px;
+		height:auto;
+	}
+	
+	#content p {
+		max-width:420px;
+		clear:both;
+	}
+	
+	ul.page-menu.columns, table#membership-rates {
+		margin-left:0;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	ul#nav {
+		display:none;
+	}
+	ul#altnav {
+		display:block;
+	}	
+	ul#altnav li.hidenav {
+		display: none;
+	}	
+	#altnav li {
+		/*background-color: #e2e2e2;*/
+		background:url("../images/main_nav_bg.png") repeat-x;
+		margin:0 0 1px 0;
+		text-align: center;
+		padding: 3px 0 2px;
+		line-height: 30px;
+		height:32px;
+	}
+	#altnav li a {
+		font-family: helvetica, verdana, arial, sans-serif;
+		text-decoration: none;
+		color:#222222;
+		display:block;
+	}	
+	#altnav li.signinnav {
+		background-color: #0d5e81;
+	}	
+	
+	#homenews blockquote {
+		display:none;
+	}
+	
+	#content img {
+		max-width:280px;
+		height:auto;
+	}
+	
+	#content p {
+		clear:both;
+		max-width: 280px;
+	}
+		
+	ul.page-menu.columns, table#membership-rates {
+		margin-left:0;
+	}
+	
+}
+
+
+/***** BANNER DETAIL ******/
+
+#bannerdetail img {
+	max-width:100%;
+	height:auto;
+}
+
+/**** BREADCRUMBS *****/
+
+#breadcrumbs { background-color: #dfdfdf; margin-bottom: 5px; padding: 3px 10px 2px; max-width: 100%; }
+#breadcrumbs a { color: #999; text-decoration: none; }
+#breadcrumbs a:hover, #breadcrumbs a:active { text-decoration: underline; }
+#breadcrumbs span.arrow { color: #999; }
+
+
+/* Homepage Donate and Volunteer Buttons
+================================================== */
+
+ul#home-two-content {
+	list-style: none;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+
+#home-two-content li {
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	font-weight:normal;
+	text-shadow: none;
+	display: table;
+}
+
+#home-two-content a {
+	color: #FFF;
+	text-decoration: none;
+	font-family: helvetica, verdana, arial, sans-serif;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#home-two a:hover {
+	color:#e2e2e2;
+}
+
+p.homepage-highlight {
+	background-color: #bcc8f7;
+	padding: 20px 29px;
+	font-family: helvetica, verdana, arial, sans-serif;	
+	font-size: 90%;
+}
+
+.donate, .volunteer, .membership {
+	height:80px;
+}
+
+
+
+.donate {
+	background: #a5b5f4; /* Old browsers */
+	background: #a5b5f4 -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+	background: #a5b5f4 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+	background: #a5b5f4 -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+	background: #a5b5f4 -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+	background: #a5b5f4 -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+	background: #a5b5f4 linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	border: 0px solid #aaa;
+	border-top: 0px solid #ccc;
+	border-left: 0px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	cursor: pointer;
+}
+
+.volunteer {
+	background: #a5b5f4; /* Old browsers */
+	background: #a5b5f4 -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+	background: #a5b5f4 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+	background: #a5b5f4 -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+	background: #a5b5f4 -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+	background: #a5b5f4 -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+	background: #a5b5f4 linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	border: 0px solid #aaa;
+	border-top: 0px solid #ccc;
+	border-left: 0px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	cursor: pointer;
+}
+
+.membership {
+	background-color: #a5b5f4;
+	background: #a5b5f4; /* Old browsers */
+	background: #a5b5f4 -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+	background: #a5b5f4 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+	background: #a5b5f4 -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+	background: #a5b5f4 -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+	background: #a5b5f4 -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+	background: #a5b5f4 linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	border: 0px solid #aaa;
+	border-top: 0px solid #ccc;
+	border-left: 0px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	cursor: pointer;
+}
+
+
+
+/* Homepage Upcoming Events
+================================================== */
+
+#home-three ul li {
+	list-style: none;
+	margin-bottom:1em;
+	padding-right:10px;
+	font-family: helvetica, verdana, arial, sans-serif;	
+}
+
+span.caldate {
+	margin-right:10px;
+	font-size: 90%;
+	background-color: #33042F;
+	color: #eee;
+	padding: 3px 5px;
+}
+
+#home-three p {
+	font-family: helvetica, verdana, arial, sans-serif;	
+	font-size: 90%;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+/* Homepage Please Visit Us
+================================================== */
+#pleasevisitus {
+
+}
+
+#pleasevisitus p {
+	margin:0 0 10px 0;
+	padding:0;
+	line-height: 20px;
+}
+
+#pleasevisitus img {
+	max-width: 100%;
+	height:auto;
+}
+
+/* Homepage News
+================================================== */
+
+#homenews img {
+	float:left;
+	margin-right: 10px;
+	margin-bottom: 1em;
+}
+
+#homenews h4 {
+	margin: 30px 0 5px;
+	padding: 3px 10px;
+	border-top: 1px solid #ddd;
+	font-size: 125%;
+	clear:both;
+	background-color: #eee;
+}
+
+#homenews ul li {
+	list-style: none;
+}
+
+#homenews blockquote {
+	margin-left:240px;
+}
+
+#homenews p {
+	margin-top:0;
+}
+
+
+/* Homepage Social Media Widgets
+================================================== */
+
+#homefive h3, #homesix h3 {
+	font-family: helvetica, verdana, arial, sans-serif;	
+	padding: 10px 10px 5px;
+	text-transform: uppercase;
+	font-size: 80%;
+	margin-top:1em;
+	margin-bottom:8px; 
+	background-color: #0d5e81;
+	color: #fefdfb;
+	clear:both;
+}
+
+#homefive iframe {
+	background-color: #fefdfb;
+	padding:10px;
+}
+
+#creditfooter img {
+	display:none;
+}
+
+/* Various static page odds and ends
+================================================== */
+#contactus {
+	text-align: left;
+}
+
+
+
+
+/* Membership Forms Header 1-2-3
+================================================== */
+#membership-form-header {
+	background-color:#fff;
+	margin-bottom: 2em;
+	padding:20px 40px;
+	border: 3px solid #444;
+	font-family: helvetica, verdana, arial, sans-serif;	
+	font-size: 14px;
+}
+
+#membership-form-header h4 {
+	font-size: 125%;
+}
+
+#membership-form-header ol {
+	margin-left: 0;
+	list-style-type: decimal;
+}
+
+#membership-form-header ol li {
+	color:#333;
+	background-color:#fff;
+	max-width: 100%;
+	height:64px;
+	padding:30px 10px 0 10px;
+	border:1px solid #444;
+}
+
+#membership-form-header ol li span {
+	font-weight: bold;
+	font-size: 115%;
+}
+
+p.next {
+	font-style: italic;
+	background-color: #fefdfb;
+	color:#222222;
+	padding:5px;
+}
+
+p.next span {
+	font-weight: bold;
+}
+
+#memberforminst {
+	padding:20px;
+	background-color: #e2e2e2;
+	border:1px solid #444;
+}
+
+/* Sunday School Form Fixes
+================================================== */
+
+#content form table {
+	width: 100%;
+}
+
+div#sectioncss {
+	display: none;
+}
+
+div#tabscss {
+
+}
+
+span.selectedtab {
+	background-color: #fefdfb;
+	width:100%;
+	height:41px;
+	display:block;
+	padding-top: 10px;
+	border-top:1px solid #444;	
+	border-left:1px solid #444;
+	border-right:1px solid #444;
+	border-bottom: none;
+}
+
+div#tabscss a {
+	background-color: #e2e2e2;
+	border: 1px solid #444;
+	width:98%;
+	height:40px;
+	display:block;
+	text-decoration: none;
+	padding-top: 10px;
+}
+
+
+
+/******* FOOTER ******/
+
+#footer {
+	clear: both;
+	max-width: 100%;
+	height: auto;
+	background: #797171;
+	color: #fefdfb;
+	font-family: helvetica, verdana, arial, sans-serif;	
+	font-size: 90%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+#footer ul, #footer p {
+	padding: 0 20px;
+}
+
+#footer ul#footernav  { 
+	max-width:100%;
+	list-style-type: none; 
+	margin: 0; 
+	background-color: #696262;
+} 
+
+#footer ul#footernav li { 
+	display: inline-block; 
+	padding: 5px 10px 5px 2px;
+	zoom:1;
+}
+
+#footer ul#footernav li:last-child { border: 0; }
+
+#footer ul#footernav li a { color:#fefdfb; text-decoration: none; }
+#footer ul#footernav li a:hover, #footer ul#footernav li a:active { text-decoration: underline; }
+
+
+/* Buttons and Forms from Skeleton CSS Framework */
+
+/* #Buttons
+================================================== */
+
+	.button,
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		background: #e2e2e2; /* Old browsers */
+		background: #e2e2e2 -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+		background: #e2e2e2 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+		background: #e2e2e2 -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+		background: #e2e2e2 -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+		background: #e2e2e2 -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+		background: #e2e2e2 linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	  border: 1px solid #aaa;
+	  border-top: 1px solid #ccc;
+	  border-left: 1px solid #ccc;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #444;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  text-shadow: 0 1px rgba(255, 255, 255, .75);
+	  cursor: pointer;
+	  margin-bottom: 20px;
+	  line-height: normal;
+	  padding: 8px 10px;
+	  font-family: Helvetica, Arial, sans-serif; }
+
+	.button:hover,
+	button:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	input[type="button"]:hover {
+		color: #222222;
+		background: #444; /* Old browsers */
+		background: #444 -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+		background: #444 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+		background: #444 -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+		background: #444 -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
+		background: #444 -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+		background: #444 linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+	  border: 1px solid #888;
+	  border-top: 1px solid #aaa;
+	  border-left: 1px solid #aaa; }
+
+	.button:active,
+	button:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	input[type="button"]:active {
+		border: 1px solid #666;
+		background: #ccc; /* Old browsers */
+		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
+		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
+		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
+		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
+		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
+		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+
+	.button.full-width,
+	button.full-width,
+	input[type="submit"].full-width,
+	input[type="reset"].full-width,
+	input[type="button"].full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; }
+
+	/* Fix for odd Mozilla border & padding issues */
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+	}
+

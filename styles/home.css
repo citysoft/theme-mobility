@@ -1,0 +1,93 @@
+/****
+CitySoft
+Mobility Template
+Homepage CSS
+*****/
+
+/* #content { display: none; } */
+
+#hometop, #homemiddle, #homebottom { font-size: 140%; line-height: 1.4em; }
+
+#hometop {
+	/* -webkit-box-shadow: 0px 0px 10px #CCC;
+	box-shadow: 0px 0px 10px #CCC;
+	margin-bottom: 1em;	*/
+}
+
+#homemiddle {
+	background-color: #e2e2e2;
+	padding-bottom: 1em;
+}
+
+#homemiddle h3 {
+	margin-top:15px;
+}
+
+#homebottom {
+	background-color: #fefdfb;
+	margin-top: 1em;
+}
+
+/* #homeone, #hometwo { 
+	width: 46%; 
+	display: inline-block;
+	padding: .5% 1.5%; 
+	vertical-align: top; 
+	zoom:1;
+}
+
+#homeone table { width: 100%; }
+#homeone div { font-size: 130%; margin-bottom: 1.2em; }
+#homeone div a { color: #fff; display: block; text-decoration: none; }
+#homeone div { background: none; background: url('../images/tablebutton.png'); background-position: 0 0; }
+#homeone div:hover { background-position: 210px 0; }
+#homeone div:hover > a { color: #473432; }
+
+#hometwo ul { list-style-type: disc; margin: .8em 0 .8em 1em; }
+
+.spacer { 
+	width: 2px;
+	height: 230px;
+	display: inline-block;
+background-image: linear-gradient(bottom, rgb(255,255,255) 11%, rgb(255,255,255) 30%, rgb(233,233,233) 78%);
+background-image: -o-linear-gradient(bottom, rgb(255,255,255) 11%, rgb(255,255,255) 30%, rgb(233,233,233) 78%);
+background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 11%, rgb(255,255,255) 30%, rgb(233,233,233) 78%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 11%, rgb(255,255,255) 30%, rgb(233,233,233) 78%);
+background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 11%, rgb(255,255,255) 30%, rgb(233,233,233) 78%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.11, rgb(255,255,255)),
+	color-stop(0.3, rgb(255,255,255)),
+	color-stop(0.78, rgb(233,233,233))
+);
+	zoom:1;
+} 
+*/
+
+/* #homebottom { width: 100%; clear:both; }
+#homebottom ul { margin: .7em 0 .7em .3em; } 
+#homebottom ol { margin-bottom: 1em; }
+#homebottom ul li { margin-bottom: .7em; }
+#homebottom p { margin-bottom: .7em; } */
+
+/* #homethree { 
+	font-size: 1.3em;
+	line-height: 1.3;
+	position: relative; 
+	top: 3em; 
+} 
+
+#homethree, #homefour, #homefive { 
+	width: 30%; 
+	display: inline-block;
+	padding: .5% 1.5%; 
+	vertical-align: top;
+	zoom:1; 
+}
+
+h3#homethree-title { width: 30%; padding: .5%; position: absolute; top: .5em; } 
+
+#homefive ul { list-style-type: none; padding: 0; } */
