@@ -1,8 +1,12 @@
 <!--- This script installs the content sections into CE for use by the slide show
 	  in the Professinoal template --->
 <!--- URL to run script:
-http://www.domain.com/_data/n_0001/scripts/mobilityInstallScript.cfm?testmode=0&sections=1&pages=1&showerrors=1 
+http://www.domain.com/_data/n_0001/scripts/mobilityInstallScript.cfm?testmode=1&sections=1&pages=1&showerrors=1 
 change testmode from 1 to 0 to run it. --->
+<!--- NOTE - the "vNodeFolder" variable is set to node 2 by default (n_0002). This makes sense if you have a 
+	  current theme in place on node1 and want to create a temp theme on node2 for testing.  However, in many
+	  scenarios, this will not be the case.  So, adjust for the site you want to display the slides in.
+	  If you make a mistake here, go into the slide channel and change the code manually. --->
 <cfparam name="vNodeFolder" type="string" default="n_0002">
 <cfparam name="url.testmode" type="boolean" default="true">
 <cfparam name="url.sections" type="boolean" default="false">

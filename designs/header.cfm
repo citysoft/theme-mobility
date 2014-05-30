@@ -47,7 +47,7 @@ Notes: 	This is a sample header file.  The header file file is generally called 
 	    <div id="wrapper" class="container"><!--- Closed in footer file --->
 	  	<div id="header" class="container">
 		    <h1 class="brand"> <a href="" title="CitySoft Theme - Mobility"></a> </h1>
-		    <p class="tagline">Your tagline or contact info could appear here.</p>
+		    <p class="tagline">Your tagline here.</p>
 	  	</div>
 		<!-- #header -->
 		<!--- END: Header section / div --->
@@ -95,6 +95,7 @@ Notes: 	This is a sample header file.  The header file file is generally called 
 </cfoutput>
 
 <!--- Content from editor --->
+<cfif isHomepage>
 <div class="container" id="hometop">
 	<div class="eight columns" id="home-one">
 		<!-- Content Spotlight 1 -->
@@ -206,3 +207,5 @@ Notes: 	This is a sample header file.  The header file file is generally called 
 	</div>
 <!-- #homefour -->
 </div>
+</cfif>
+
