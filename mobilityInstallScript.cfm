@@ -7,7 +7,7 @@ change testmode from 1 to 0 to run it. --->
 	  current theme in place on node1 and want to create a temp theme on node2 for testing.  However, in many
 	  scenarios, this will not be the case.  So, adjust for the site you want to display the slides in.
 	  If you make a mistake here, go into the slide channel and change the code manually. --->
-<cfparam name="vNodeFolder" type="string" default="n_0002">
+<cfparam name="vNodeFolder" type="string" default="n_0001">
 <cfparam name="url.testmode" type="boolean" default="true">
 <cfparam name="url.sections" type="boolean" default="false">
 <cfparam name="url.pages" type="boolean" default="false">
