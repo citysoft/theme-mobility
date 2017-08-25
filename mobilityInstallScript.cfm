@@ -160,6 +160,7 @@ change testmode from 1 to 0 to run it. --->
 		SELECT title
 		FROM contentT
 		WHERE title = <cfqueryparam value="#sectioninstallquery.sectiontitle#" cfsqltype="CF_SQL_VARCHAR">
+		AND NodeID = <cfqueryparam value="#url.node#" cfsqltype="cf_sql_integer">
 	</cfquery>
 
 	<cfif NOT dupecheck.recordcount>
@@ -167,14 +168,20 @@ change testmode from 1 to 0 to run it. --->
 		<cfif NOT url.testmode and url.sections EQ 1>
 			<cfquery name="insertcontentchannels" datasource="#request.dsn#">
 				INSERT INTO contentT (
-					title
-					,content
-					,createdate
+					Title
+					,Content
+					,CreateDate
+					<cfif isDefined("url.Node") AND isValid("integer",trim(url.node))>
+					,NodeID
+					</cfif>
 					)
 				VALUES (
 					<cfqueryparam value="#sectioninstallquery.sectiontitle#" cfsqltype="CF_SQL_VARCHAR">
 					,<cfqueryparam value="#sectioninstallquery.sectioncontent#" cfsqltype="CF_SQL_VARCHAR">
 					,#CreateODBCDateTime(now())#
+					<cfif isDefined("url.Node") AND isValid("integer",trim(url.node))>
+					,<cfqueryparam value="#url.node#" cfsqltype="cf_sql_integer">
+					</cfif>
 					)
 			</cfquery>
 		</cfif>
@@ -236,6 +243,7 @@ change testmode from 1 to 0 to run it. --->
 		SELECT pagetitle
 		FROM page
 		WHERE pagetitle = <cfqueryparam value="#pageinstallquery.pagetitle#" cfsqltype="CF_SQL_VARCHAR">
+			AND NodeID = <cfqueryparam value="#url.node#" cfsqltype="cf_sql_integer">
 	</cfquery>
 
 	<!--- Get ParentPageID for insert below into Page table. --->
