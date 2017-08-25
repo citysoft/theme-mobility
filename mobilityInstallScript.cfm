@@ -1,16 +1,33 @@
 <!--- This script installs the content sections into CE for use by the slide show
 	  in the Professinoal template --->
+
 <!--- URL to run script:
-http://www.domain.com/_data/n_0001/scripts/mobilityInstallScript.cfm?testmode=1&sections=1&pages=1&showerrors=1 
+Option #1 - If you are using an extension folder to run the deployment script (which allows you to bypass the "check request" 
+security filter), then your deployment url might look like the following:
+http://www.domain.com/index.cfm?fuseaction=themeDeploy.mobility&testmode=1&sections=1&pages=0&node=1&showerrors=1
+
+Option #2 - If you want to run the file directly, the url might look similar to the following (but would need to be added as
+an exception in the "check request" security filter in order to run):
+http://www.domain.com/_data/n_0001/scripts/mobilityInstallScript.cfm?testmode=1&sections=1&pages=1&node=1&showerrors=1 
 change testmode from 1 to 0 to run it. --->
+
+
 <!--- NOTE - the "vNodeFolder" variable is set to node 2 by default (n_0002). This makes sense if you have a 
 	  current theme in place on node1 and want to create a temp theme on node2 for testing.  However, in many
 	  scenarios, this will not be the case.  So, adjust for the site you want to display the slides in.
 	  If you make a mistake here, go into the slide channel and change the code manually. --->
-<cfparam name="vNodeFolder" type="string" default="n_0001">
+<!---<cfparam name="vNodeFolder" type="string" default="n_0001">---><!--- Probably don't need this anymore - replaced by pathlocation variable --->
 <cfparam name="url.testmode" type="boolean" default="true">
 <cfparam name="url.sections" type="boolean" default="false">
 <cfparam name="url.pages" type="boolean" default="false">
+<cfparam name="url.node" type="numeric" default=1><!--- If this is 0, that indicates the /global/ directory --->
+
+<cfif isDefined("url.node") AND url.node EQ 0>
+	<cfset variables.pathlocation = "global">
+<cfelseif isDefined("url.node") AND url.node GT 0>
+	<cfset variables.pathlocation = "n_" & NumberFormat(url.node, "0009")>
+</cfif>
+
 <cfif url.testmode>
 	TEST MODE ONLY - NO INSERTS INTO CE DB<br>
 </cfif>
@@ -25,49 +42,49 @@ change testmode from 1 to 0 to run it. --->
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 1" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/01.jpg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/01.jpg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 2" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/04.jpg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/02.jpg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 3" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/02.jpg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/03.jpg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 4" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/03.jpg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/04.jpg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 5" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/06.jpg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/05.jpg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 6" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/07.jpeg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/06.jpeg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectiontitle", "Slide 7" ) />
 		<cfset QuerySetCell( sectioninstallquery, "sectioncontent", "
 				<li>
-					<img src='/_data/#vNodeFolder#/images/05.jpeg' /></li>
+					<img src='/_data/#variables.pathlocation#/images/07.jpeg' /></li>
 					" ) />
 
 		<cfset QueryAddRow( sectioninstallquery ) />
@@ -209,6 +226,8 @@ change testmode from 1 to 0 to run it. --->
 		WHERE name = <cfqueryparam value="div_c1" cfsqltype="CF_SQL_VARCHAR">
 	</cfquery>
 
+<cfdump var="#pageinstallquery#" label=""/>
+
 <!--- Insert to the Destination DB --->
 <cfoutput query="pageinstallquery">
 
@@ -217,6 +236,14 @@ change testmode from 1 to 0 to run it. --->
 		SELECT pagetitle
 		FROM page
 		WHERE pagetitle = <cfqueryparam value="#pageinstallquery.pagetitle#" cfsqltype="CF_SQL_VARCHAR">
+	</cfquery>
+
+	<!--- Get ParentPageID for insert below into Page table. --->
+	<cfquery name="getHomePageID" datasource="#request.dsn#">
+		SELECT pageid
+		FROM page
+		WHERE parentpageid = 0
+			AND NodeID = <cfqueryparam value="#url.node#" cfsqltype="cf_sql_integer">
 	</cfquery>
 
 	<cfif NOT dupecheck.recordcount>
@@ -234,9 +261,9 @@ change testmode from 1 to 0 to run it. --->
 					CreateDate
 					)
 				Values(
-					4
+					<cfqueryparam value="#getHomePageID.PageID#" cfsqltype="cf_sql_integer">
 					,<cfqueryparam value="#getpagetemplateid.pagetemplateid#" cfsqltype="CF_SQL_VARCHAR">
-					,1
+					,<cfqueryparam value="#url.node#" cfsqltype="cf_sql_integer">
 					,<cfqueryparam value="#pageinstallquery.pagetitle#" cfsqltype="CF_SQL_VARCHAR">
 					,<cfqueryparam value="#pageinstallquery.pagenavtitle#" cfsqltype="CF_SQL_VARCHAR">
 					,4
